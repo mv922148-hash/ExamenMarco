@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión - Login</title>
+    <meta name="description" content="Sistema de gestión de usuarios con roles y permisos">
+    <meta name="keywords" content="login, gestión, usuarios, roles, dashboard">
+    <meta property="og:title" content="Sistema de Gestión - Login">
+    <meta property="og:description" content="Sistema de gestión de usuarios con roles y permisos">
+    <meta name="twitter:title" content="Sistema de Gestión - Login">
+    <meta name="twitter:description" content="Sistema de gestión de usuarios con roles y permisos">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <link href="styles/global.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #dbeafe;
+            --accent-color: #1e40af;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-gradient-start: #3b82f6;
+            --bg-gradient-end: #1e40af;
+        }
+    }
+
+    @layer base {
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            min-height: 100vh;
+        }
+    }
+
+    @layer components {
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+
+        .input-glass::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .input-glass:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.25);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel" src="components/Alert.js"></script>
+    <script type="text/babel" src="utils/auth.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
